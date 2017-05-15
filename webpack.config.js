@@ -7,10 +7,14 @@ const config = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.bundle.js'
     },
-    module : {
-        rules : [
-            { test: /\.js$/, use: 'babel-loader'}
+    module: {
+        rules: [
+            { test: /\.js$/, use: 'babel-loader' },
+            { test: /\.ts$/, use: 'awesome-typescript-loader' }
         ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js']
     },
     plugins: [
         new HtmlWebpackPlugin()
