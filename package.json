@@ -1,0 +1,23 @@
+{
+  "name": "new-project",
+  "version": "1.0.0",
+  "description": "This is some dummy description",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir out --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel":{
+    "presets":[
+      "es2015"
+    ]
+  },
+  "author": "Tiberiu Covaci",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1"
+  }
+}
