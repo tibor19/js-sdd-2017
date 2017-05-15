@@ -3,8 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
 const path = require('path');
 
 const config = {
-  entry: ['babel-polyfill', './src/app.js'],
-  devtool: 'eval-source-map',
+  entry: ['babel-polyfill', './app.js'],
+  devtool: '#eval-source-map',
+  context: path.resolve(__dirname, 'src'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
@@ -15,10 +16,14 @@ const config = {
       { test: /\.(js|es|jsx)$/, use: 'babel-loader', exclude: /(node_modules)/ }
     ]
   },
-  // eslint: {
-  //   failOnWarning: false,
-  //   failOnError: true
-  // },
+  resolve: {
+    modules: [
+      path.join(__dirname, 'src'),
+      'node_modules'
+    ],
+    extensions: ['.js', '.jsx']
+  },
+
   plugins: [
     // new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({ template: './index.html' })

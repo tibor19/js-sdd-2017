@@ -35,6 +35,7 @@
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
+    "node-fetch": "^1.6.3",
     "webpack-dev-server": "^2.4.5"
   }
 }
